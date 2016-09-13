@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <script>
+
+        var call = function()
+        {
+            var callInfo = JSON.stringify({"jianshu": "http://www.jianshu.com/p/0dc009e856b0"});
+            yilian.getCall(callInfo);
+        }
+    
+    </script>
+    
+    <script>
+        function sum(){
+            alert('hello');
+        }
+    </script>
+</head>
+
+<body>
+    <br><br>
+    <div style="margin-top: 20px">
+    <input type="button" value="点击网页按钮，调用OC代码" onclick="yilian.jsCallOC()">
+    </div>
+    <br><br><br>
+
+    <div>
+    <input type="button" value="点击网页按钮，返回数据给OC" onclick="call()">
+    </div>
+</body>
+</html>
