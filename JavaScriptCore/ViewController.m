@@ -51,6 +51,15 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     self.jsContext                  = [self.loadWebView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
+// 后台调用这个方法就可以回传信息
+//    <script>
+//         var call = function()
+//         {
+//             var callInfo = JSON.stringify({"github": "https://github.com/YUJINHAI2015/javaScriptCore"});
+//             yilian.getCall(callInfo);
+//         }
+//    
+//    </script>
     self.jsContext[@"yilian"]       = self; // 和后台约定好的字段
     self.jsContext.exceptionHandler = ^(JSContext *context, JSValue *exceptionValue) {
         context.exception           = exceptionValue;
