@@ -10,7 +10,10 @@
 
 #import "ViewController.h"
 #import "YLJSResponseOC.h"
-
+// release不能提交到苹果
+#ifdef DEBUG
+#import "WebView+Debug.h"
+#endif
 
 @interface ViewController ()<UIWebViewDelegate,JSObjcDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView             *loadWebView;
