@@ -29,7 +29,7 @@
 }
 #pragma mark - 加载主页
 - (void)loadMainView{
-    [self loadExamplePage:@"http://www.eldls.com:88/m/hb_index.aspx" andWebView:self.loadWebView];
+    [self loadExamplePage:@"你们自己的网页" andWebView:self.loadWebView];
 }
 - (void)loadExamplePage:(NSString *)urlStr andWebView:(UIWebView *)webView{
     
@@ -51,7 +51,7 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     self.jsContext                  = [self.loadWebView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
-    self.jsContext[@"yilian"]       = self;
+    self.jsContext[@"yilian"]       = self; // 和后台约定好的字段
     self.jsContext.exceptionHandler = ^(JSContext *context, JSValue *exceptionValue) {
         context.exception           = exceptionValue;
         NSLog(@"异常信息：%@", exceptionValue);
